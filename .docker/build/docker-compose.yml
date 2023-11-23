@@ -1,0 +1,14 @@
+version: '2'
+services:
+  evolve.apache:
+    image: 507781781903.dkr.ecr.ap-southeast-2.amazonaws.com/evolve
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=test
+    build:
+      context: ../../
+      dockerfile: .docker/build/apache/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
